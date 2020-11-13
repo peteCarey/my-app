@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<div class="dialog-actions">
+    <button id="confirm" mat-raised-button color="primary" [disabled]="!isAmountValid()" (click)="buyButtonAction()" >
+      Price
+    </button>
+    <button mat-raised-button (click)="closeManualAmount()">
+        Time
+      </button>
+      <button (click)="getData()">Fetch Data</button>
+  </div>
+    <table>
+      <thead><tr><th>Arrival Date</th><th>Arrival Station Code</th><th>Arrival Time</th></tr></thead>
+        <div 
+        *ngFor="let item of data; let i = index" >
+     
+            <p>{{item.data.ArrDate(i)}}</p>
+            <p>{{item.data.ArrStationCode(i)}}</p>
+            <p>{{item.data.ArrTime(i)}}</p>
+            <p>{{item.data.Arrival(i)}}</p>
+        </div>
+    <button class= "btn btn-success" >Get Data</button>
+    </table> 
+  
